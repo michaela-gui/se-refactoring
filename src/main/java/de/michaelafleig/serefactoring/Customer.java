@@ -1,3 +1,4 @@
+package de.michaelafleig.serefactoring;
 
 import java.lang.*;
 import java.util.*;

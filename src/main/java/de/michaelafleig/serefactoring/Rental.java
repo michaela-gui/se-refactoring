@@ -1,3 +1,5 @@
+package de.michaelafleig.serefactoring;
+
 class Rental {
     private Movie movie;
     private int daysRented;
