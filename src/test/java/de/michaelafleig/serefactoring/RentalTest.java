@@ -6,10 +6,17 @@ import org.junit.jupiter.api.Test;
 
 public class RentalTest {
 
+    private static final int NEW_DAYS_RENTED_1  =  1;
+    private static final int NEW_DAYS_RENTED_2  =  2;
+    private static final int NEW_DAYS_RENTED_5  =  5;
+    private static final int NEW_DAYS_RENTED_10 = 10;
+    private static final String NEW_TITLE_1 = "Test";
+    private static final String NEW_NAME_1  = "Er";
+
     @Test
     void statement1() {
-        Rental r = new Rental(new Movie("Test", Movie.NEW_RELEASE), 5);
-        Customer c = new Customer("Er");
+        Rental r = new Rental(new Movie(NEW_TITLE_1, Movie.NEW_RELEASE), NEW_DAYS_RENTED_5);
+        Customer c = new Customer(NEW_NAME_1);
         c.addRental(r);
         assertEquals("Rental Record for Er\n" +
                 "\tTitle\t\tDays\tAmount\n" +
@@ -18,11 +25,12 @@ public class RentalTest {
                 "You earned 2 frequent renter points", c.statement());
     }
 
+
     @Test
     void statement2() {
-        Rental r = new Rental(new Movie("Test", Movie.CHILDREN), 5);
-        Rental r2 = new Rental(new Movie("Test", Movie.REGULAR), 10);
-        Customer c = new Customer("Er");
+        Rental r = new Rental(new Movie(NEW_TITLE_1 Movie.CHILDREN), NEW_DAYS_RENTED_5);
+        Rental r2 = new Rental(new Movie(NEW_TITLE_1, Movie.REGULAR), NEW_DAYS_RENTED_10);
+        Customer c = new Customer(NEW_NAME_1;
         c.addRental(r);
         c.addRental(r2);
         assertEquals("Rental Record for Er\n" +
@@ -35,9 +43,9 @@ public class RentalTest {
 
     @Test
     void statement3() {
-        Rental r = new Rental(new Movie("Test", Movie.CHILDREN), 1);
-        Rental r2 = new Rental(new Movie("Test", Movie.REGULAR), 2);
-        Customer c = new Customer("Er");
+        Rental r = new Rental(new Movie(NEW_TITLE_1, Movie.CHILDREN), NEW_DAYS_RENTED_1);
+        Rental r2 = new Rental(new Movie(NEW_TITLE_1, Movie.REGULAR), NEW_DAYS_RENTED_2);
+        Customer c = new Customer(NEW_NAME_1);
         c.addRental(r);
         c.addRental(r2);
         assertEquals("Rental Record for Er\n" +
