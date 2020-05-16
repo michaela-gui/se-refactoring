@@ -6,6 +6,10 @@ import java.util.*;
 class Customer {
     private String name;
     private Vector rentals = new Vector();
+    private static final double PRICE_PARAM_1_5 = 1.5;
+    private static final int DAYS_RENTED_1 = 1;
+    private static final int DAYS_RENTED_2 = 2;
+    private static final int DAYS_RENTED_3 = 3;
 
     public Customer(String newName) {
         name = newName;
@@ -40,7 +44,7 @@ class Customer {
             // add frequent renter points
             frequentRenterPoints++;
             // add bonus for a two day new release rental
-            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > 1)
+            if ((each.getMovie().getPriceCode() == Movie.NEW_RELEASE) && each.getDaysRented() > DAYS_RENTED_1)
                 frequentRenterPoints++;
             //show figures for this rental
             result += "\t" + each.getMovie().getTitle() + "\t" + "\t" + each.getDaysRented() + "\t" + String.valueOf(thisAmount) + "\n";
@@ -56,17 +60,17 @@ class Customer {
         double thisAmount = 0;
         switch (rental.getMovie().getPriceCode()) {
             case Movie.REGULAR:
-                thisAmount += 2;
-                if (rental.getDaysRented() > 2)
-                    thisAmount += (rental.getDaysRented() - 2) * 1.5;
+                thisAmount += DAYS_RENTED_2;
+                if (rental.getDaysRented() > DAYS_RENTED_2)
+                    thisAmount += (rental.getDaysRented() - DAYS_RENTED_2) * PRICE_PARAM_1_5;
                 break;
             case Movie.NEW_RELEASE:
-                thisAmount += rental.getDaysRented() * 3;
+                thisAmount += rental.getDaysRented() * DAYS_RENTED_3;
                 break;
             case Movie.CHILDREN:
-                thisAmount += 1.5;
-                if (rental.getDaysRented() > 3)
-                    thisAmount += (rental.getDaysRented() - 3) * 1.5;
+                thisAmount += PRICE_PARAM_1_5;
+                if (rental.getDaysRented() > DAYS_RENTED_3)
+                    thisAmount += (rental.getDaysRented() - DAYS_RENTED_3) * PRICE_PARAM_1_5;
                 break;
         }
         return thisAmount;
