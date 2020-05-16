@@ -49,6 +49,7 @@ class Customer {
         String result = "Rental Record for " + this.getName() + "\n";
         result += "\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n";
 
+        StringBuilder resultBuilder = new StringBuilder(result);
         while (enum_rentals.hasMoreElements()) {
             double thisAmount;
             Rental rental = (Rental) enum_rentals.nextElement();
@@ -61,10 +62,11 @@ class Customer {
             if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > DAYS_RENTED_1)
                 frequentRenterPoints++;
             //show figures for this rental
-            result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + thisAmount + "\n";
+            resultBuilder.append("\t").append(rental.getMovie().getTitle()).append("\t").append("\t").append(rental.getDaysRented()).append("\t").append(thisAmount).append("\n");
             //addToVar(totalAmount, thisAmount);
             totalAmount += thisAmount;
         }
+        result = resultBuilder.toString();
         //add footer lines
         result += "Amount owed is " + totalAmount + "\n";
         result += "You earned " + frequentRenterPoints + " frequent renter points";
