@@ -25,11 +25,6 @@ class Customer {
         rentals.addElement(arg);
     }
 
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
     public String getName() {
         return name;
     }
