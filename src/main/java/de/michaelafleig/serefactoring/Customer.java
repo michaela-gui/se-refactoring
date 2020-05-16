@@ -65,9 +65,9 @@ class Customer {
 
     private double amountFor(Rental rental) {
         double thisAmount = 0;
-        //int priceCode = rental.getMovie().getPriceCode();
+        int priceCode = rental.getMovie().getPriceCode();
 
-        switch (rental.getMovie().getPriceCode()) {
+        switch (priceCode) {
             case Movie.REGULAR:
                 //addToVar(thisAmount, DAYS_RENTED_2);
                 thisAmount += DAYS_RENTED_2;
