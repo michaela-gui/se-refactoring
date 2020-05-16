@@ -20,7 +20,7 @@ public class RentalTest {
 
     @Test
     void statement2() {
-        Rental r = new Rental(new Movie("Test", Movie.CHILDRENS), 5);
+        Rental r = new Rental(new Movie("Test", Movie.CHILDREN), 5);
         Rental r2 = new Rental(new Movie("Test", Movie.REGULAR), 10);
         Customer c = new Customer("Er");
         c.addRental(r);
@@ -35,7 +35,7 @@ public class RentalTest {
 
     @Test
     void statement3() {
-        Rental r = new Rental(new Movie("Test", Movie.CHILDRENS), 1);
+        Rental r = new Rental(new Movie("Test", Movie.CHILDREN), 1);
         Rental r2 = new Rental(new Movie("Test", Movie.REGULAR), 2);
         Customer c = new Customer("Er");
         c.addRental(r);

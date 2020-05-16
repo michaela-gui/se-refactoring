@@ -5,7 +5,7 @@ import java.lang.*;
 /**
  * Note that Java console applications need to be run through the java runtime
  * by running "java -jar JarFile.jar" in the command line.
- * Java console applications can not be previewed in the Compilr IDE, only applets can.
+ * Java console applications can not be previewed in the Compiler IDE, only applets can.
  */
 public class Program {
     /**
@@ -17,7 +17,7 @@ public class Program {
         String result;
         System.out.println("Welcome to the de.michaelafleig.serefactoring.Movie Store");
         Movie m1 = new Movie("movie1", Movie.NEW_RELEASE);
-        Movie m2 = new Movie("movie2", Movie.CHILDRENS);
+        Movie m2 = new Movie("movie2", Movie.CHILDREN);
         Rental r1 = new Rental(m1, 10);
         Rental r2 = new Rental(m2, 5);
         Customer c1 = new Customer("joe");
