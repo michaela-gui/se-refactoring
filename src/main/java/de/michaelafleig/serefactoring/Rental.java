@@ -1,8 +1,8 @@
 package de.michaelafleig.serefactoring;
 
 class Rental {
-    private Movie movie;
-    private int daysRented;
+    private final Movie movie;
+    private final int daysRented;
 
     public Rental(Movie newMovie, int newDaysRented) {
         movie = newMovie;

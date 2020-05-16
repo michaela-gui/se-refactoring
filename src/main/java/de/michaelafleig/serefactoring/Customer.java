@@ -4,8 +4,8 @@ import java.lang.*;
 import java.util.*;
 
 class Customer {
-    private String name;
-    private Vector rentals = new Vector();
+    private final String name;
+    private final Vector rentals = new Vector();
     private static final double PRICE_PARAM_1_5 = 1.5;
     private static final int DAYS_RENTED_1 = 1;
     private static final int DAYS_RENTED_2 = 2;
