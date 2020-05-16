@@ -13,7 +13,7 @@ class Rental {
     {
         return new Rental(newMovie, newDaysRented);
     }
-    
+
     public int getDaysRented() {
         return daysRented;
     }
