@@ -14,7 +14,7 @@ public class RentalTest {
     private static final String NEW_NAME_1  = "Er";
 
     @Test
-    void statement1() {
+    public void statement1() {
         Rental rental = Rental.create(Movie.create(NEW_TITLE_1, Movie.NEW_RELEASE), NEW_DAYS_RENTED_5);
         Customer customer = Customer.create(NEW_NAME_1);
         customer.addRental(rental);
@@ -27,7 +27,7 @@ public class RentalTest {
 
 
     @Test
-    void statement2() {
+    public void statement2() {
         Rental rental1 = Rental.create(Movie.create(NEW_TITLE_1, Movie.CHILDREN), NEW_DAYS_RENTED_5);
         Rental rental2 = Rental.create(Movie.create(NEW_TITLE_1, Movie.REGULAR), NEW_DAYS_RENTED_10);
         Customer customer = Customer.create(NEW_NAME_1);
@@ -42,7 +42,7 @@ public class RentalTest {
     }
 
     @Test
-    void statement3() {
+    public void statement3() {
         Rental rental1 = Rental.create(Movie.create(NEW_TITLE_1, Movie.CHILDREN), NEW_DAYS_RENTED_1);
         Rental rental2 = Rental.create(Movie.create(NEW_TITLE_1, Movie.REGULAR), NEW_DAYS_RENTED_2);
 
