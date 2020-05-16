@@ -94,6 +94,8 @@ class Customer {
                 //else
                 //    throw new OrderProcessingError(rental.getDaysRented() < DAYS_RENTED_3);
                 break;
+            default:
+                break;
         }
         return thisAmount;
     }
