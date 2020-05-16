@@ -17,8 +17,7 @@ class Customer {
 
     public static Customer create(String newName)
     {
-        Customer customer = new Customer(newName);
-        return customer;
+        return new Customer(newName);
     }
 
     public void addRental(Rental arg) {

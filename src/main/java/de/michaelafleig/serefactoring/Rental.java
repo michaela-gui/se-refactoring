@@ -11,8 +11,7 @@ class Rental {
 
     public static Rental create(Movie newMovie, int newDaysRented)
     {
-        Rental rental = new Rental(newMovie, newDaysRented);
-        return rental;
+        return new Rental(newMovie, newDaysRented);
     }
 
     public void setDaysRented(int days)

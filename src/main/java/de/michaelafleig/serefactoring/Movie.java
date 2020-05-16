@@ -15,8 +15,7 @@ public class Movie {
         priceCode = newPriceCode;
     }
     public static Movie create(String newTitle, int newPriceCode) {
-        Movie movie = new Movie(newTitle, newPriceCode);
-        return movie;
+        return new Movie(newTitle, newPriceCode);
     }
 
     public int getPriceCode() {
