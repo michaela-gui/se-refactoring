@@ -2,7 +2,7 @@ package de.michaelafleig.serefactoring;
 
 class Rental {
     private final Movie movie;
-    private final int daysRented;
+    private int daysRented;
 
     private Rental(Movie newMovie, int newDaysRented) {
         movie = newMovie;
@@ -13,6 +13,11 @@ class Rental {
     {
         Rental rental = new Rental(newMovie, newDaysRented);
         return rental;
+    }
+
+    public void setDaysRented(int days)
+    {
+        daysRented = days;
     }
 
     public int getDaysRented() {
