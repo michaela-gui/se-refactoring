@@ -4,9 +4,15 @@ class Rental {
     private final Movie movie;
     private final int daysRented;
 
-    public Rental(Movie newMovie, int newDaysRented) {
+    private Rental(Movie newMovie, int newDaysRented) {
         movie = newMovie;
         daysRented = newDaysRented;
+    }
+
+    public static Rental create(Movie newMovie, int newDaysRented)
+    {
+        Rental rental = new Rental(newMovie, newDaysRented);
+        return rental;
     }
 
     public int getDaysRented() {

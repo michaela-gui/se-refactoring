@@ -1,5 +1,7 @@
 package de.michaelafleig.serefactoring;
 
+import java.util.HashSet;
+
 public class Movie {
     public static final int CHILDREN = 2;
     public static final int REGULAR = 0;
@@ -7,9 +9,14 @@ public class Movie {
     private final String title;
     private final int priceCode;
 
-    public Movie(String newTitle, int newPriceCode) {
+    private Movie(String newTitle, int newPriceCode)
+    {
         title = newTitle;
         priceCode = newPriceCode;
+    }
+    public static Movie create(String newTitle, int newPriceCode) {
+        Movie movie = new Movie(newTitle, newPriceCode);
+        return movie;
     }
 
     public int getPriceCode() {

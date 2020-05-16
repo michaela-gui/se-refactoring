@@ -15,8 +15,8 @@ public class RentalTest {
 
     @Test
     void statement1() {
-        Rental rental = new Rental(new Movie(NEW_TITLE_1, Movie.NEW_RELEASE), NEW_DAYS_RENTED_5);
-        Customer customer = new Customer(NEW_NAME_1);
+        Rental rental = Rental.create(Movie.create(NEW_TITLE_1, Movie.NEW_RELEASE), NEW_DAYS_RENTED_5);
+        Customer customer = Customer.create(NEW_NAME_1);
         customer.addRental(rental);
         assertEquals("Rental Record for Er\n" +
                 "\tTitle\t\tDays\tAmount\n" +
@@ -28,9 +28,9 @@ public class RentalTest {
 
     @Test
     void statement2() {
-        Rental rental1 = new Rental(new Movie(NEW_TITLE_1, Movie.CHILDREN), NEW_DAYS_RENTED_5);
-        Rental rental2 = new Rental(new Movie(NEW_TITLE_1, Movie.REGULAR), NEW_DAYS_RENTED_10);
-        Customer customer = new Customer(NEW_NAME_1);
+        Rental rental1 = Rental.create(Movie.create(NEW_TITLE_1, Movie.CHILDREN), NEW_DAYS_RENTED_5);
+        Rental rental2 = Rental.create(Movie.create(NEW_TITLE_1, Movie.REGULAR), NEW_DAYS_RENTED_10);
+        Customer customer = Customer.create(NEW_NAME_1);
         customer.addRental(rental1);
         customer.addRental(rental2);
         assertEquals("Rental Record for Er\n" +
@@ -43,9 +43,10 @@ public class RentalTest {
 
     @Test
     void statement3() {
-        Rental rental1 = new Rental(new Movie(NEW_TITLE_1, Movie.CHILDREN), NEW_DAYS_RENTED_1);
-        Rental rental2 = new Rental(new Movie(NEW_TITLE_1, Movie.REGULAR), NEW_DAYS_RENTED_2);
-        Customer customer = new Customer(NEW_NAME_1);
+        Rental rental1 = Rental.create(Movie.create(NEW_TITLE_1, Movie.CHILDREN), NEW_DAYS_RENTED_1);
+        Rental rental2 = Rental.create(Movie.create(NEW_TITLE_1, Movie.REGULAR), NEW_DAYS_RENTED_2);
+
+        Customer customer = Customer.create(NEW_NAME_1);
         customer.addRental(rental1);
         customer.addRental(rental2);
         assertEquals("Rental Record for Er\n" +

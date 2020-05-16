@@ -11,8 +11,14 @@ class Customer {
     private static final int DAYS_RENTED_2 = 2;
     private static final int DAYS_RENTED_3 = 3;
 
-    public Customer(String newName) {
+    private Customer(String newName) {
         name = newName;
+    }
+
+    public static Customer create(String newName)
+    {
+        Customer customer = new Customer(newName);
+        return customer;
     }
 
     public void addRental(Rental arg) {
