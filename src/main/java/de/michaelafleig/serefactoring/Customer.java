@@ -53,8 +53,9 @@ class Customer {
             // add frequent renter points
             frequentRenterPoints++;
             // add bonus for a two day new release rental
-            if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > DAYS_RENTED_1)
+            if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > DAYS_RENTED_1) {
                 frequentRenterPoints++;
+            }
             //show figures for this rental
             resultBuilder.append("\t").append(rental.getMovie().getTitle()).append("\t").append("\t").append(rental.getDaysRented()).append("\t").append(thisAmount).append("\n");
             //addToVar(totalAmount, thisAmount);
@@ -76,7 +77,9 @@ class Customer {
                 thisAmount += DAYS_RENTED_2;
                 if (rental.getDaysRented() > DAYS_RENTED_2)
                     //addToVar(thisAmount,(rental.getDaysRented() - DAYS_RENTED_2) * PRICE_PARAM_1_5);
+                {
                     thisAmount += (rental.getDaysRented() - DAYS_RENTED_2) * PRICE_PARAM_1_5;
+                }
                 //else
                 //    throw new OrderProcessingError(rental.getDaysRented() < DAYS_RENTED_2);
                 break;
@@ -89,7 +92,9 @@ class Customer {
                 thisAmount += PRICE_PARAM_1_5;
                 if (rental.getDaysRented() > DAYS_RENTED_3)
                     //addToVar(thisAmount, (rental.getDaysRented() - DAYS_RENTED_3) * PRICE_PARAM_1_5);
+                {
                     thisAmount += (rental.getDaysRented() - DAYS_RENTED_3) * PRICE_PARAM_1_5;
+                }
                 //else
                 //    throw new OrderProcessingError(rental.getDaysRented() < DAYS_RENTED_3);
                 break;
