@@ -34,12 +34,6 @@ class Customer {
         return name;
     }
 
-    private void addToVar(double Var, double addVal)
-    {
-        Var += addVal;
-        return;
-    }
-
     public String statement() {
         double totalAmount;
         totalAmount = 0;
