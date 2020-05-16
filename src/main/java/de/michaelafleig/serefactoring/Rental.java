@@ -1,7 +1,7 @@
 package de.michaelafleig.serefactoring;
 
 class Rental {
-    private final Movie movie;
+    private Movie movie;
     private int daysRented;
 
     private Rental(Movie newMovie, int newDaysRented) {
