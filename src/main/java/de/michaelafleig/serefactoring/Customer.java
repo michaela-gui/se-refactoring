@@ -5,7 +5,7 @@ import java.util.*;
 
 class Customer {
     private String name;
-    private Vector rentals = new Vector();
+    private Vector rentals;
     private static final double PRICE_PARAM_1_5 = 1.5;
     private static final int DAYS_RENTED_1 = 1;
     private static final int DAYS_RENTED_2 = 2;
@@ -13,6 +13,7 @@ class Customer {
 
     private Customer(String newName) {
         name = newName;
+        rentals = new Vector();
     }
 
     public static Customer create(String newName)
