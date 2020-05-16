@@ -1,6 +1,6 @@
 package de.michaelafleig.serefactoring;
 
-import java.lang.*;
+//import java.lang.*;
 
 /**
  * Note that Java console applications need to be run through the java runtime

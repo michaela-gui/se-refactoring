@@ -1,6 +1,6 @@
 package de.michaelafleig.serefactoring;
 
-import java.lang.*;
+//import java.lang.*;
 import java.util.*;
 
 class Customer {
@@ -65,6 +65,7 @@ class Customer {
 
     private double amountFor(Rental rental) {
         double thisAmount = 0;
+        //int priceCode = rental.getMovie().getPriceCode();
 
         switch (rental.getMovie().getPriceCode()) {
             case Movie.REGULAR:
