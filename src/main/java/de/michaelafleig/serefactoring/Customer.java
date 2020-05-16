@@ -34,6 +34,12 @@ class Customer {
         return name;
     }
 
+    private void addToVar(double Var, double addVal)
+    {
+        Var += addVal;
+        return;
+    }
+
     public String statement() {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
@@ -45,7 +51,7 @@ class Customer {
             double thisAmount = 0;
             Rental rental = (Rental) enum_rentals.nextElement();
             //determine amounts for each line
-            thisAmount = amountFor(rental);
+            addToVar(thisAmount, amountFor(rental));
             // add frequent renter points
             frequentRenterPoints++;
             // add bonus for a two day new release rental
@@ -53,7 +59,7 @@ class Customer {
                 frequentRenterPoints++;
             //show figures for this rental
             result += "\t" + rental.getMovie().getTitle() + "\t" + "\t" + rental.getDaysRented() + "\t" + String.valueOf(thisAmount) + "\n";
-            totalAmount += thisAmount;
+            addToVar(totalAmount, thisAmount);
         }
         //add footer lines
         result += "Amount owed is " + String.valueOf(totalAmount) + "\n";
@@ -63,21 +69,22 @@ class Customer {
 
     private double amountFor(Rental rental) {
         double thisAmount = 0;
+
         switch (rental.getMovie().getPriceCode()) {
             case Movie.REGULAR:
-                thisAmount += DAYS_RENTED_2;
+                addToVar(thisAmount, DAYS_RENTED_2);
                 if (rental.getDaysRented() > DAYS_RENTED_2)
-                    thisAmount += (rental.getDaysRented() - DAYS_RENTED_2) * PRICE_PARAM_1_5;
+                    addToVar(thisAmount,(rental.getDaysRented() - DAYS_RENTED_2) * PRICE_PARAM_1_5);
                 //else
                 //    throw new OrderProcessingError(rental.getDaysRented() < DAYS_RENTED_2);
                 break;
             case Movie.NEW_RELEASE:
-                thisAmount += rental.getDaysRented() * DAYS_RENTED_3;
+                addToVar(thisAmount, rental.getDaysRented() * DAYS_RENTED_3);
                 break;
             case Movie.CHILDREN:
-                thisAmount += PRICE_PARAM_1_5;
+                addToVar(thisAmount, PRICE_PARAM_1_5);
                 if (rental.getDaysRented() > DAYS_RENTED_3)
-                    thisAmount += (rental.getDaysRented() - DAYS_RENTED_3) * PRICE_PARAM_1_5;
+                    addToVar(thisAmount, (rental.getDaysRented() - DAYS_RENTED_3) * PRICE_PARAM_1_5);
                 //else
                 //    throw new OrderProcessingError(rental.getDaysRented() < DAYS_RENTED_3);
                 break;
