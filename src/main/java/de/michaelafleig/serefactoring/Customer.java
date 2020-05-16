@@ -15,19 +15,13 @@ class Customer {
         name = newName;
     }
 
-    ;
-
     public void addRental(Rental arg) {
         rentals.addElement(arg);
     }
 
-    ;
-
     public String getName() {
         return name;
     }
-
-    ;
 
     public String statement() {
         double totalAmount = 0;
