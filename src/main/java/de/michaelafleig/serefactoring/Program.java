@@ -18,7 +18,7 @@ public class Program {
     private static final String CUSTOMER_NAME_1 = "joe";
 
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         String result;
         System.out.println("Welcome to the de.michaelafleig.serefactoring.Movie Store");
 
