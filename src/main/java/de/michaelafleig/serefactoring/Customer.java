@@ -57,6 +57,8 @@ class Customer {
                 thisAmount += DAYS_RENTED_2;
                 if (rental.getDaysRented() > DAYS_RENTED_2)
                     thisAmount += (rental.getDaysRented() - DAYS_RENTED_2) * PRICE_PARAM_1_5;
+                //else
+                //    throw new OrderProcessingError(rental.getDaysRented() < DAYS_RENTED_2);
                 break;
             case Movie.NEW_RELEASE:
                 thisAmount += rental.getDaysRented() * DAYS_RENTED_3;
@@ -65,6 +67,8 @@ class Customer {
                 thisAmount += PRICE_PARAM_1_5;
                 if (rental.getDaysRented() > DAYS_RENTED_3)
                     thisAmount += (rental.getDaysRented() - DAYS_RENTED_3) * PRICE_PARAM_1_5;
+                //else
+                //    throw new OrderProcessingError(rental.getDaysRented() < DAYS_RENTED_3);
                 break;
         }
         return thisAmount;
